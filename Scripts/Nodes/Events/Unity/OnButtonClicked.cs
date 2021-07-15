@@ -4,7 +4,7 @@ using XNode;
 namespace HalfBlind.Nodes {
     [CreateNodeMenu("UI/" + nameof(OnButtonClicked), "Button", "Clicked")]
     public class OnButtonClicked : EventNode {
-        [Input(editorIconName: "Button Icon", shouldTint: false)]
+        [Input]
         public Button MyButton;
 
         // Use this for initialization

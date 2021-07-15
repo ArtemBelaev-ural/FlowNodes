@@ -4,7 +4,7 @@ using XNode;
 namespace HalfBlind.Nodes {
     [CreateNodeMenu("Random/" + nameof(RandomBranch), "Random", "branch")]
     public class RandomBranch : FlowNode {
-        [Output(instancePortList: true)] public int[] FlowOutputWeights;
+        [Output(dynamicPortList: true)] public int[] FlowOutputWeights;
 
         public override void ExecuteNode() {
         }

@@ -4,7 +4,7 @@ using XNode;
 namespace HalfBlind.Nodes {
     [CreateNodeMenu("GameObject/"+nameof(DestroyObject))]
     public class DestroyObject : FlowNode {
-        [Input(editorIconName: "d_Prefab Icon", shouldTint: false)]
+        [Input]
         public GameObject Target;
 
         public override void ExecuteNode() {
