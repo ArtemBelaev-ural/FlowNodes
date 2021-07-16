@@ -2,15 +2,10 @@
     "name": "FlowNodes",
     "rootNamespace": "",
     "references": [
-        "GUID:9db740f0acf078241a85bee79ffeb083",
-        "GUID:671ce7c95289af14fa69bd4bfcbbe0b8",
-        "GUID:b8e24fd1eb19b4226afebb2810e3c19b"
+        "GUID:b8e24fd1eb19b4226afebb2810e3c19b",
+        "GUID:671ce7c95289af14fa69bd4bfcbbe0b8"
     ],
-    "includePlatforms": [
-        "Android",
-        "iOS",
-        "WindowsStandalone64"
-    ],
+    "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,

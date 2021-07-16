@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using XNode;
 
-namespace Math {
+namespace MathNode {
+    [CreateNodeMenu("Math/AddFloat")]
     public class AddFloat : MonoNode {
         public enum Operation {
             Add,
