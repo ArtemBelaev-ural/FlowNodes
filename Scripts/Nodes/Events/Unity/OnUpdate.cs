@@ -1,6 +1,8 @@
-﻿using XNode;
+﻿using UnityEngine;
+using XNode;
 
 namespace HalfBlind.Nodes {
+    [ExecuteInEditMode]
     [CreateNodeMenu("Events/"+nameof(OnUpdate), "Update")]
     public class OnUpdate : EventNode {
         public int Milliseconds;

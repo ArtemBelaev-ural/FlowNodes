@@ -3,7 +3,7 @@ using XNode;
 
 namespace Data.UnityNative {
     [CreateNodeMenu("GameObject/"+nameof(GetTransform))]
-    [NodeWidth(150)]
+    [NodeWidth(190)]
     public class GetTransform : MonoNode 
     {
         [Input] public GameObject input;
