@@ -2,6 +2,7 @@
 using XNode;
 
 namespace Logic {
+    [CreateNodeMenu("Math/AndOr", 101)]
     public class AndOr : MonoNode {
         public enum Operation {
             And,

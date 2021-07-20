@@ -2,7 +2,7 @@
 using XNode;
 
 namespace HalfBlind.Nodes {
-    [CreateNodeMenu("Utils/" + nameof(LoadSpriteResource), "Load", "Image", "Sprite")]
+    [CreateNodeMenu("Ui/" + nameof(LoadSpriteResource), "Load", "Image", "Sprite")]
     public class LoadSpriteResource : FlowNode {
         [Input] public string SpriteName;
         [Output] public Sprite Result;

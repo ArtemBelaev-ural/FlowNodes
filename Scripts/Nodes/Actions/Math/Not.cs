@@ -2,6 +2,7 @@
 using XNode;
 
 namespace Logic {
+    [CreateNodeMenu("Math/Not", 102)]
     public class Not : MonoNode {
         [Input] public bool Input;
         [Output] public bool Result;

@@ -10,7 +10,7 @@ namespace BoGD
     /// </summary>
     [AddComponentMenu("Math/FloatCurve")]
     [CreateNodeMenu("Math/FloatCurve")]
-    public class FloatCurveParameter : MonoNode
+    public class FloatCurve : MonoNode
     {
         [Input]
         public float            input = 0.0f;
@@ -19,7 +19,6 @@ namespace BoGD
 
         [SerializeField]
         private AnimationCurve  curve = new AnimationCurve();
-
 
         public override object GetValue(NodePort port)
         {

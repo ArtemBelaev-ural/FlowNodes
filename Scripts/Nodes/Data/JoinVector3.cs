@@ -2,7 +2,7 @@
 using XNode;
 
 namespace Data.UnityNative {
-    [CreateNodeMenu("Data/" + nameof(JoinVector3), "vector")]
+    [CreateNodeMenu("Math/" + nameof(JoinVector3), 201)]
     public class JoinVector3 : MonoNode {
         [Input] public float X;
         [Input] public float Y;

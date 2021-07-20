@@ -3,6 +3,7 @@ using XNode;
 
 namespace MathNode {
     [CreateNodeMenu("Math/AddFloat")]
+    [NodeWidth(160)]
     public class AddFloat : MonoNode {
         public enum Operation {
             Add,

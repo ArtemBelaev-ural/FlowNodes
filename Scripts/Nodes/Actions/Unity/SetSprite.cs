@@ -2,7 +2,7 @@ using UnityEngine;
 using XNode;
 
 namespace HalfBlind.Nodes {
-    [CreateNodeMenu("Utils/"+nameof(SetSprite), "Sprite")]
+    [CreateNodeMenu("Ui/"+nameof(SetSprite), "Sprite")]
     public class SetSprite : FlowNode {
         [Input] public SpriteRenderer Target;
         [Input] public Sprite MySprite;
