@@ -2,7 +2,7 @@
 using XNode;
 
 namespace HalfBlind.Nodes {
-    [CreateNodeMenu("Utils/"+nameof(LogNode), "Log", "Print")]
+    [CreateNodeMenu("Utils/Log", "Log", "Print")]
     public class LogNode : FlowNode {
         [Input] public string Text;
 
