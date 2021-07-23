@@ -1,8 +1,10 @@
 ﻿using DG.Tweening;
 using XNode;
 
-namespace HalfBlind.Nodes {
-    public abstract class BaseDoTween : FlowNode {
+namespace FlowNodes
+{
+    public abstract class BaseDoTween : FlowNode
+    {
         public float Duration = 1;
         public float DelaySeconds = 0;
         public int LoopsAmount;
@@ -11,16 +13,19 @@ namespace HalfBlind.Nodes {
 
         protected Tweener tween;
 
-        public override void TriggerFlow() {
+        public override void TriggerFlow()
+        {
             //base.TriggerFlow();
         }
 
         // Return the correct value of an output port when requested
-        public override object GetValue(NodePort port) {
+        public override object GetValue(NodePort port)
+        {
             return null; // Replace this
         }
 
-        protected Tweener SetupTween(Tweener toSetup) {
+        protected Tweener SetupTween(Tweener toSetup)
+        {
             toSetup.SetDelay(DelaySeconds)
                 .SetEase(Easing)
                 .SetLoops(LoopsAmount, Loop);
@@ -28,7 +33,8 @@ namespace HalfBlind.Nodes {
             return toSetup;
         }
 
-        protected void OnTweenComplete() {
+        protected void OnTweenComplete()
+        {
             base.TriggerFlow();
             tween = null;
         }

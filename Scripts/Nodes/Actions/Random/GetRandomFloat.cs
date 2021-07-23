@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using XNode;
 
-namespace Actions.UnityNative {
+namespace FlowNodes
+{
     [CreateNodeMenu("Random/" + nameof(GetRandomFloat), "Random", "Float")]
     public class GetRandomFloat : MonoNode {
         [Input] public float Min;

@@ -2,14 +2,18 @@
 using UnityEngine.UI;
 using XNode;
 
-namespace HalfBlind.Nodes {
-    [CreateNodeMenu("UI/"+nameof(ReadInputFieldText), "Input", "Field")]
-    public class ReadInputFieldText : MonoNode {
+namespace FlowNodes
+{
+    [CreateNodeMenu("UI/" + nameof(ReadInputFieldText), "Input", "Field")]
+    public class ReadInputFieldText : MonoNode
+    {
         [Input] public InputField inputField;
         [Output] public string fieldText;
 
-        public override object GetValue(NodePort port) {
-            if (inputField != null) {
+        public override object GetValue(NodePort port)
+        {
+            if (inputField != null)
+            {
                 return inputField.text;
             }
 

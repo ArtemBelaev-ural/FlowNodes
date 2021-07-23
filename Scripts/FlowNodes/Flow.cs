@@ -1,5 +1,6 @@
 ﻿using System;
 
-namespace XNode {
+namespace FlowNodes
+{
     [Serializable] public class Flow { }
 }

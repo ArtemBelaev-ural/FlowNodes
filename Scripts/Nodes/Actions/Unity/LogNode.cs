@@ -1,16 +1,23 @@
 ﻿using UnityEngine;
 using XNode;
 
-namespace HalfBlind.Nodes {
-    [CreateNodeMenu("Utils/Log", "Log", "Print")]
-    public class LogNode : FlowNode {
+namespace FlowNodes
+{
+    [CreateNodeMenu("Utils/Log", 1)]
+    public class LogNode : FlowNode 
+    {
         [Input] public string Text;
 
         public override void ExecuteNode() 
         {
             NodePort port = GetInputPort(nameof(Text));
             int count = port.ConnectionCount;
-            if (count == 1)
+
+            if (count == 0)
+            {
+                Debug.LogFormat("<color=brown>{0}: </color>" + Text, Name);
+            }
+            else if (count == 1)
             {
                 Debug.LogFormat("<color=brown>{0}: </color>" + port.GetInputValue<object>(), Name);
             }

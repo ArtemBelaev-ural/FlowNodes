@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using XNode;
 
-namespace MathNode {
+namespace FlowNodes
+{
     [CreateNodeMenu("Math/AddFloat")]
     [NodeWidth(160)]
     public class AddFloat : MonoNode {

@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using XNode;
 
-namespace Logic {
+namespace FlowNodes
+{
     [CreateNodeMenu("Math/Not", 102)]
     public class Not : MonoNode {
         [Input] public bool Input;

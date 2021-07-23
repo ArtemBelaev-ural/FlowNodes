@@ -1,10 +1,13 @@
 ﻿using UnityEngine;
 using XNode;
 
-namespace Actions.UnityNative {
-    [CreateNodeMenu("GameObject/SetActive", "visible")]
-    public class SetActive : FlowNode {
-        public enum ActiveOptions {
+namespace FlowNodes
+{
+    [CreateNodeMenu("GameObject/SetActive")]
+    public class SetActive : FlowNode 
+    {
+        public enum ActiveOptions
+        {
             Enable,
             Disable,
             Toggle,
@@ -14,18 +17,21 @@ namespace Actions.UnityNative {
         public ActiveOptions Options;
 
         // Use this for initialization
-        protected override void Init() {
+        protected override void Init()
+        {
             base.Init();
         }
 
-        public override void ExecuteNode() {
+        public override void ExecuteNode()
+        {
             var target = GetInputValue<GameObject>(nameof(Target), Target);
             var isActive = Options == ActiveOptions.Enable ? true : Options == ActiveOptions.Disable ? false : !target.activeSelf;
             target.SetActive(isActive);
         }
 
         // Return the correct value of an output port when requested
-        public override object GetValue(NodePort port) {
+        public override object GetValue(NodePort port)
+        {
             return null; // Replace this
         }
     }

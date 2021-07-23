@@ -1,29 +1,37 @@
 ﻿using UnityEngine;
 using XNode;
 
-namespace HalfBlind.Nodes {
+namespace FlowNodes
+{
     [CreateNodeMenu("Random/" + nameof(RandomBranch), "Random", "branch")]
-    public class RandomBranch : FlowNode {
+    public class RandomBranch : FlowNode
+    {
         [Output(dynamicPortList: true)] public int[] FlowOutputWeights;
 
-        public override void ExecuteNode() {
+        public override void ExecuteNode()
+        {
         }
 
-        public override void TriggerFlow() {
-            if(FlowOutputWeights.Length <= 0) {
+        public override void TriggerFlow()
+        {
+            if (FlowOutputWeights.Length <= 0)
+            {
                 return;
             }
 
             int totalWeight = 0;
-            for (int i = 0; i < FlowOutputWeights.Length; i++) {
+            for (int i = 0; i < FlowOutputWeights.Length; i++)
+            {
                 totalWeight += Mathf.Abs(FlowOutputWeights[i]);
             }
 
             int randomValue = Random.Range(0, totalWeight) + 1;
 
-            for (int i = 0; i < FlowOutputWeights.Length; i++) {
+            for (int i = 0; i < FlowOutputWeights.Length; i++)
+            {
                 randomValue -= Mathf.Abs(FlowOutputWeights[i]);
-                if(randomValue <= 0) {
+                if (randomValue <= 0)
+                {
                     FlowUtils.TriggerFlow(Outputs, $"{nameof(FlowOutputWeights)} {i}");
                     return;
                 }
@@ -31,7 +39,8 @@ namespace HalfBlind.Nodes {
         }
 
         // Return the correct value of an output port when requested
-        public override object GetValue(NodePort port) {
+        public override object GetValue(NodePort port)
+        {
             return null; // Replace this
         }
     }

@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using XNode;
 
-namespace HalfBlind.Nodes {
+namespace FlowNodes
+{
     [CreateNodeMenu("GameObject/" + nameof(Instantiate), "Instantiate", "Create", "Spawn")]
     public class Instantiate : FlowNode {
         [Input] public GameObject Prefab;

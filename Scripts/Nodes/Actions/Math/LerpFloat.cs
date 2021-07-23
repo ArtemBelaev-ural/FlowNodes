@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using XNode;
 
-namespace BoGD
+namespace FlowNodes
 {
     /// <summary>
     /// ќбеспечивает плавное изменение параметра

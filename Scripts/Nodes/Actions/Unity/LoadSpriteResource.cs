@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using XNode;
 
-namespace HalfBlind.Nodes {
+namespace FlowNodes
+{
     [CreateNodeMenu("Ui/" + nameof(LoadSpriteResource), "Load", "Image", "Sprite")]
     public class LoadSpriteResource : FlowNode {
         [Input] public string SpriteName;

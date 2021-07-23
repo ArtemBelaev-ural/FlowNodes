@@ -1,12 +1,15 @@
 using UnityEngine;
 using XNode;
 
-namespace HalfBlind.Nodes {
-    [CreateNodeMenu("Utils/"+nameof(GetUniqueDeviceIdentifier), "Unique", "Identifier")]
-    public class GetUniqueDeviceIdentifier : MonoNode {
+namespace FlowNodes
+{
+    [CreateNodeMenu("Utils/"+nameof(GetUniqueDeviceIdentifier))]
+    public class GetUniqueDeviceIdentifier : MonoNode
+    {
         [Output] public string deviceId;
 
-        public override object GetValue(NodePort port) {
+        public override object GetValue(NodePort port)
+        {
             return port.fieldName == nameof(deviceId) ? SystemInfo.deviceUniqueIdentifier : null;
         }
     }

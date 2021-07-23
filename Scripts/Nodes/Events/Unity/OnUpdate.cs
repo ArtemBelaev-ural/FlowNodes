@@ -1,21 +1,29 @@
 ﻿using UnityEngine;
 using XNode;
 
-namespace HalfBlind.Nodes {
+namespace FlowNodes
+{
     [ExecuteInEditMode]
-    [CreateNodeMenu("Events/"+nameof(OnUpdate), "Update")]
-    public class OnUpdate : EventNode {
+    [CreateNodeMenu("Events/" + nameof(OnUpdate), "Update")]
+    public class OnUpdate : EventNode
+    {
         public int Milliseconds;
-        private float _timestamp { get; set; }
+        private float _timestamp
+        {
+            get; set;
+        }
 
-        private void Update() {
-            if(UnityEngine.Time.realtimeSinceStartup > _timestamp) {
+        private void Update()
+        {
+            if (UnityEngine.Time.realtimeSinceStartup > _timestamp)
+            {
                 TriggerFlow();
                 _timestamp = UnityEngine.Time.realtimeSinceStartup + Milliseconds * 0.001f;
             }
         }
 
-        public override object GetValue(NodePort port) {
+        public override object GetValue(NodePort port)
+        {
             return null;
         }
     }

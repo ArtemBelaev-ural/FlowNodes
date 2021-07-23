@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
 using XNode;
 
-namespace HalfBlind.Nodes {
+namespace FlowNodes
+{
     [CreateNodeMenu("GameObject/ThisGameObject")]
     [NodeWidth(140)]
-    public class ThisGameObject : MonoNode 
+    public class ThisGameObject : MonoNode
     {
         [Output] public GameObject output;
 
@@ -13,9 +14,9 @@ namespace HalfBlind.Nodes {
             Name = "ThisGameObject";
         }
 
-        public override object GetValue(NodePort port) 
+        public override object GetValue(NodePort port)
         {
-            if (port.fieldName == nameof(output)) 
+            if (port.fieldName == nameof(output))
             {
                 return gameObject;
             }

@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
+using XNode;
 
-namespace XNode {
+namespace FlowNodes
+{
     public static class FlowUtils {
         public static void TriggerFlow(IEnumerable<NodePort> Outputs, string outputTriggerName) {
             var connectedInputPorts = new List<FlowNode>();

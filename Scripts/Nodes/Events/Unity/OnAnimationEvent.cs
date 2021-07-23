@@ -1,18 +1,23 @@
 ﻿using XNode;
 
-namespace HalfBlind {
+namespace FlowNodes
+{
     [NodeWidth(300)]
-    [CreateNodeMenu("Events/" + nameof(OnAnimationEvent), "Animation", "Event")]
-    public class OnAnimationEvent : EventNode {
+    [CreateNodeMenu("Events/" + nameof(OnAnimationEvent))]
+    public class OnAnimationEvent : EventNode
+    {
         [Output] public string EventName;
 
-        public void DoAnimationEvent(string eventName) {
+        public void DoAnimationEvent(string eventName)
+        {
             EventName = eventName;
             TriggerFlow();
         }
 
-        public override object GetValue(NodePort port) {
-            if (port.fieldName == nameof(EventName)) {
+        public override object GetValue(NodePort port)
+        {
+            if (port.fieldName == nameof(EventName))
+            {
                 return EventName;
             }
 

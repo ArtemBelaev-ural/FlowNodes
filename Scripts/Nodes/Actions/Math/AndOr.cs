@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using XNode;
 
-namespace Logic {
+namespace FlowNodes
+{
     [CreateNodeMenu("Math/AndOr", 101)]
     public class AndOr : MonoNode {
         public enum Operation {

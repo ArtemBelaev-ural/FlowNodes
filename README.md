@@ -1,2 +1,2 @@
-# FlowNodes
-OpenSource Flow nodes for gamejams
+# MonoNode Library
+OpenSource Flow nodes based on MonoNode
