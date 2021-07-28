@@ -9,7 +9,7 @@ using FlowNodes;
 namespace FlowNodesEditor
 {
     /// <summary>
-    /// Окно звукового графа
+    /// Окно графа
     /// </summary>
     [CustomNodeGraphEditor(typeof(FlowNodeGraph))]
     public class FlowNodeGraphGraphEditor : NodeGraphEditor
@@ -34,7 +34,7 @@ namespace FlowNodesEditor
     }
 
     /// <summary>
-    /// Инспектор звукового графа. Добавляет кнопки play, stop и т.д..
+    /// Инспектор графа. Добавляет кнопки execute, stop и т.д..
     /// </summary>
     [CustomEditor(typeof(FlowNodeGraph), true)]
     public class FlowNodeGraphInspector : MonoNodeInspector
@@ -62,9 +62,10 @@ namespace FlowNodesEditor
             string[] nodeNames = GetFlowNodeNames(out int current);
             int newCurrent = EditorGUILayout.Popup(new GUIContent("Execute", "Name of node to execute in editor mode"),
                 current, nodeNames);
-            if (newCurrent != current)
+
+            if (nodeNames.Length > 0 && nodeNames[newCurrent] != flowNodeGraph.NodeToTestExecute)
             {
-                flowNodeGraph.NodeToTestExecute = newCurrent != 0 ? nodeNames[newCurrent] : "";
+                flowNodeGraph.NodeToTestExecute = nodeNames[newCurrent];
                 Undo.RecordObject(flowNodeGraph, "NodeToTestExecute");
                 EditorUtility.SetDirty(flowNodeGraph);
             }

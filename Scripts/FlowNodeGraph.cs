@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using XNode;
 
@@ -78,7 +79,7 @@ namespace FlowNodes
             return false;
         }
 
-        public const string ALL_NODES = "all nodes";
+        public const string ALL_NODES = ":- all nodes";
 
         /// <summary>
         /// Plays sound graph
@@ -87,6 +88,11 @@ namespace FlowNodes
         /// <param name="parameters">Custom graph parameters<seealso cref="ExecuteParameter"/></param>
         public void Execute(string flowNodeName = null, params object[] parameters)
         {
+            if (flowNodeName == null)
+            {
+                flowNodeName = NodeToTestExecute;
+            }
+
             UpdateParameters(parameters);
             FlowNode[] flowNodes = GetComponents<FlowNode>();
             if (flowNodes.Length == 0)
@@ -94,12 +100,9 @@ namespace FlowNodes
                 Debug.LogError(gameObject.name + ": FlowNodeGraph hasn't FlowNode");
             }
 
-            if (!hasNodeWithName(flowNodes, flowNodeName)) // ненулевое значение, которого нет в списке
+            if (flowNodeName != ALL_NODES && !hasNodeWithName(flowNodes, flowNodeName)) 
             {
-                if (flowNodeName == null)
-                {
-                    flowNodeName = ALL_NODES;
-                }
+                Debug.LogError(gameObject.name + ": there is no node named \"" +flowNodeName+"\" in the graph");
             }
 
             foreach (var node in flowNodes)
@@ -127,6 +130,26 @@ namespace FlowNodes
 
     public static class ExtensionMethods
     {
+        public static T RandomElement<T>(this List<T> parameters, int startIndex = 0)
+        {
+            int count=parameters.Count;
+            if (parameters == null || count == 0)
+            {
+                return default;
+            }
+
+            return parameters[UnityEngine.Random.Range(Mathf.Min(count - 1, startIndex), count)];
+        }
+
+        public static T RandomElement<T>(this T[] parameters)
+        {
+            if (parameters == null || parameters.Length == 0)
+            {
+                return default(T);
+            }
+            return (T)parameters[UnityEngine.Random.Range(0, parameters.Length)];
+        }
+
         public static string ToHex(this Color color)
         {
             string rtn = "#" + ((int)(color.r * 255)).ToString("X2") + ((int)(color.g * 255)).ToString("X2") + ((int)(color.b * 255)).ToString("X2");

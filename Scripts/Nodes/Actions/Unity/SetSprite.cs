@@ -3,7 +3,7 @@ using XNode;
 
 namespace FlowNodes
 {
-    [CreateNodeMenu("Ui/" + nameof(SetSprite))]
+    [CreateNodeMenu("UI/" + nameof(SetSprite))]
     public class SetSprite : FlowNode
     {
         [Input] public SpriteRenderer Target;

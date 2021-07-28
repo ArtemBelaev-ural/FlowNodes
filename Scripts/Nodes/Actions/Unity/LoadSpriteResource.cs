@@ -3,7 +3,7 @@ using XNode;
 
 namespace FlowNodes
 {
-    [CreateNodeMenu("Ui/" + nameof(LoadSpriteResource), "Load", "Image", "Sprite")]
+    [CreateNodeMenu("UI/" + nameof(LoadSpriteResource), "Load", "Image", "Sprite")]
     public class LoadSpriteResource : FlowNode {
         [Input] public string SpriteName;
         [Output] public Sprite Result;

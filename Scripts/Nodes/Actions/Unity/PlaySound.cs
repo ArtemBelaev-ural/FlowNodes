@@ -3,7 +3,7 @@ using XNode;
 
 namespace FlowNodes
 {
-    [CreateNodeMenu("Audio/"+nameof(PlaySound), "sfx", "music")]
+    [CreateNodeMenu("Sound/Play Clip", 10001)]
     public class PlaySound : FlowNode 
     {
         [Input] public AudioClip Audio;
